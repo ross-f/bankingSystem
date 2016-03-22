@@ -29,7 +29,7 @@ public class Main {
                     break;
                 }
                 case 2: {
-                    w.withdraw(b.getBalance());
+                    b.changeBalance(w.withdraw(b.getBalance()));
                     break;
                 }
                 case 3: {

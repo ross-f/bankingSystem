@@ -8,6 +8,7 @@ import java.io.IOException;
 
 public class Balance {
     FileInputStream fi;
+    FileOutputStream fo;
     String outputFromFile;
     int balance;
 
@@ -29,8 +30,8 @@ public class Balance {
         return balance;
     }
 
-    public int changeBalance(int balance) throws IOException{
+    public void changeBalance(int balance) throws IOException{
         fo = new FileOutputStream("balance.txt");
-
+        fo.write(balance);
     }
 }
