@@ -30,7 +30,7 @@ public class Main {
 
         switch (menuChoice) {
             case 1:{
-                System.out.println("Your balance is " + bal.balance());
+                System.out.println("Your balance is £" + bal.balance());
             }
         }
     }

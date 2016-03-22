@@ -1,5 +1,4 @@
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
@@ -8,15 +7,24 @@ import java.io.IOException;
 
 public class showBalance {
     FileInputStream fi;
+    String outputFromFile;
     int balance;
 
-    public char balance() throws IOException {
+
+    public int balance() throws IOException {
         fi = new FileInputStream("file.txt");
         int c;
-        char thing = 0;
-        while ((c=fi.read())!=-1)
-            thing = (char) c;
+        char[] thing = new char[5];
+        int i = 0;
+        while ((c=fi.read())!=-1) {
+            thing[i] = (char) c;
+            i++;
+        }
 
-        return thing;
+        outputFromFile = new String(thing);
+
+        balance = Integer.parseInt(outputFromFile);
+
+        return balance;
     }
 }
