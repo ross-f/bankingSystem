@@ -1,18 +1,19 @@
 import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 /**
  * Created by ross on 3/22/16.
  */
 
-public class showBalance {
+public class Balance {
     FileInputStream fi;
     String outputFromFile;
     int balance;
 
 
-    public int balance() throws IOException {
-        fi = new FileInputStream("file.txt");
+    public int getBalance() throws IOException {
+        fi = new FileInputStream("balance.txt");
         int c;
         char[] thing = new char[5];
         int i = 0;
@@ -26,5 +27,10 @@ public class showBalance {
         balance = Integer.parseInt(outputFromFile);
 
         return balance;
+    }
+
+    public int changeBalance(int balance) throws IOException{
+        fo = new FileOutputStream("balance.txt");
+
     }
 }
