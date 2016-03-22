@@ -20,7 +20,7 @@ public class Main {
         System.out.println("Please choose an option from the menu below: \n" +
                 "      1)Show Balance \n" +
                 "      2)Withdraw \n" +
-                "      3)Deposit" +
+                "      3)Deposit \n" +
                 "      4)Cancel");
 
         int menuChoice;
@@ -30,7 +30,7 @@ public class Main {
 
         switch (menuChoice) {
             case 1:{
-                System.out.println(bal.balance());
+                System.out.println("Your balance is " + bal.balance());
             }
         }
     }

@@ -8,13 +8,15 @@ import java.io.IOException;
 
 public class showBalance {
     FileInputStream fi;
-    FileOutputStream fo;
     int balance;
 
-    public int balance() throws IOException {
+    public char balance() throws IOException {
         fi = new FileInputStream("file.txt");
-        fo = new FileOutputStream("file.txt");
-        balance = fi.read();
-        return balance;
+        int c;
+        char thing = 0;
+        while ((c=fi.read())!=-1)
+            thing = (char) c;
+
+        return thing;
     }
 }
