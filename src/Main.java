@@ -1,5 +1,3 @@
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -12,16 +10,16 @@ public class Main {
 
         int menuChoice;
         Scanner sb = new Scanner(System.in);
-        Balance b = new Balance();
+        manipulateBalance b = new manipulateBalance();
         withdrawCash w = new withdrawCash();
 
         do {
             System.out.println("Please choose an option from the menu below: \n" +
-                    "      1)Show Balance \n" +
+                    "      1)Show manipulateBalance \n" +
                     "      2)Withdraw \n" +
                     "      3)Deposit \n" +
                     "      4)Cancel");
-
+            // TODO - fix input mismatch 
             menuChoice = sb.nextInt();
             switch (menuChoice) {
                 case 1: {
@@ -29,7 +27,7 @@ public class Main {
                     break;
                 }
                 case 2: {
-                    b.changeBalance(w.withdraw(b.getBalance()));
+                    w.withdraw(b.getBalance());
                     break;
                 }
                 case 3: {
