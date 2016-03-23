@@ -3,9 +3,10 @@ import java.util.Scanner;
 
 /**
  * Created by ross on 3/22/16.
+ * Should be used as part of fileStreams
  */
-public class withdrawCash extends manipulateBalance {
-    public boolean withdraw(int balance){
+class withdrawCash extends balance {
+    public void withdraw(int balance){
         int amountToWithdraw;
         System.out.println("How much would you like to withdraw?");
 
@@ -14,7 +15,7 @@ public class withdrawCash extends manipulateBalance {
 
         if (balance - amountToWithdraw <= 0){
             System.out.println("You don't have enough cash pal, sod off");
-            return false;
+            return;
         }
 
         balance -= amountToWithdraw;
@@ -25,6 +26,5 @@ public class withdrawCash extends manipulateBalance {
             e.printStackTrace();
         }
 
-        return true;
     }
 }

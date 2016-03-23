@@ -2,21 +2,15 @@ import java.util.Scanner;
 
 /**
  * Created by ross on 3/22/16.
+ * Should be used as part of fileStreams
  */
-public class checkPin {
-    int pin = 1234;
-
+class checkPin {
     public boolean isPinCorrect(){
         System.out.println("Please enter a pin:");
         Scanner sb = new Scanner(System.in);
         int enteredPin = sb.nextInt();
 
-        if (enteredPin == pin) {
-            System.out.println("correct pin");
-            return true;
-        } else {
-            System.out.println("Incorrect pin.");
-            return false;
-        }
+        int pin = 1234;
+        return enteredPin == pin;
     }
 }
