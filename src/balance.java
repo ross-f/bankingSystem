@@ -8,8 +8,10 @@ import java.io.*;
 class balance {
     public int getBalance() throws IOException {
         FileInputStream fi = new FileInputStream("balance.txt");
+        long sizeOfFile = new File("balance.txt").length();
+        int SizeOfFile = Math.round(sizeOfFile);
         int c;
-        char[] charsFromFile = new char[5];
+        char[] charsFromFile = new char[SizeOfFile];
         int i = 0;
         while ((c= fi.read())!=-1) {
             charsFromFile[i] = (char) c;

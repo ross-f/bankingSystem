@@ -15,18 +15,8 @@ class Main {
     public static void main(String[] args) throws IOException {
         int numberOfPinTries = 5;
 
-        checkPin c = new checkPin();
-        int i;
-        for (i = 1; i <= numberOfPinTries; i++){
-            if(c.isPinCorrect()){
-                System.out.println("Correct pin!");
-                break;
-            } else {
-                System.out.println("Incorrect pin! \n" +
-                        "You have " + (numberOfPinTries - i) + " attempts remaining");
-            }
-        }
-        if (i > numberOfPinTries) System.exit(0);
+        // TODO - fix non int validation
+        new checkPin(numberOfPinTries);
 
         int menuChoice;
         Scanner sb = new Scanner(System.in);
@@ -34,11 +24,14 @@ class Main {
 
         do {
             displayMenu();
+
+            // TODO - shop this from causing the menu to loop
             try {
                 menuChoice = sb.nextInt();
             } catch (InputMismatchException e){
                 menuChoice = 5; // triggers the default in the case switch
             }
+
             switch (menuChoice) {
                 case 1: {
                     System.out.println("Your balance is £" + b.getBalance());
@@ -58,7 +51,7 @@ class Main {
                     String input;
                     input = sb.next();
 
-                    if (input.equals("y")) System.exit(0);
+                    if (input.equals("y")||input.equals("Y")) System.exit(0);
 
                     break;
                 }
