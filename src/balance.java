@@ -6,7 +6,6 @@ import java.io.*;
  */
 
 class balance {
-
     public int getBalance() throws IOException {
         FileInputStream fi = new FileInputStream("balance.txt");
         int c;

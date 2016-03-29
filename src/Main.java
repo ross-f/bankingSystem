@@ -28,13 +28,12 @@ class Main {
         }
         if (i > numberOfPinTries) System.exit(0);
 
-        int menuChoice = 0;
+        int menuChoice;
         Scanner sb = new Scanner(System.in);
         balance b = new balance();
-        withdrawCash w = new withdrawCash();
 
         do {
-            if (menuChoice==0) displayMenu();
+            displayMenu();
             try {
                 menuChoice = sb.nextInt();
             } catch (InputMismatchException e){
@@ -43,24 +42,30 @@ class Main {
             switch (menuChoice) {
                 case 1: {
                     System.out.println("Your balance is £" + b.getBalance());
-                    displayMenu();
                     break;
                 }
                 case 2: {
-                    w.withdraw(b.getBalance());
-                    displayMenu();
+                    new withdrawCash(b.getBalance());
                     break;
                 }
                 case 3: {
-
+                    // TODO - Fix overflow
+                    new depositCash(b.getBalance());
+                    break;
                 }
                 case 4: {
+                    System.out.println("Are you sure you want to exit? (y/n)");
+                    String input;
+                    input = sb.next();
 
+                    if (input.equals("y")) System.exit(0);
+
+                    break;
                 }
                 default: {
                     System.out.println("That is not a valid option, please try again");
                 }
             }
-        } while (menuChoice!=4);
+        } while (true);
     }
 }
