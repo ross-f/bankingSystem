@@ -3,7 +3,9 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 class Main {
-
+    /* The following method displays the main menu this is in
+        a function so it can be reused easily
+         */
     private static void displayMenu(){
         System.out.println("Please choose an option from the menu below: \n" +
                 "      1)Show balance \n" +

@@ -22,11 +22,10 @@ class checkPin {
         return enteredPin == pin;
     }
 
-    /**
-     *  The following method handles the number of times a pin can be entered.
-     *  The max number of tries is passed through as a parameter, this
-     *  allows the value to be set in the main
-     */
+    /* The following method handles the number of times a pin can be entered.
+       The max number of tries is passed through as a parameter, this
+       allows the value to be set in the main
+        */
 
     checkPin(int numberOfPinTries) {
         // The loop index of i is defined outside the for loop so that it can be used in the if
