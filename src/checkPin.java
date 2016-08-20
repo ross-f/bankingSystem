@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 /**
@@ -14,12 +15,12 @@ class checkPin {
         // Object Scanner is initialised as sb to handle inputs
         Scanner sb = new Scanner(System.in);
         // User imputed pin is stored in the Integer of enteredPin
-        int enteredPin = sb.nextInt();
+        String enteredPin = sb.nextLine();
 
         // This is where the pin is stored,
-        int pin = 1234;
+        String pin = "1234";
         // the enteredPin is compared to the pin and the result - either true or false - is returned
-        return enteredPin == pin;
+        return Objects.equals(enteredPin, pin);
     }
 
     /* The following method handles the number of times a pin can be entered.
